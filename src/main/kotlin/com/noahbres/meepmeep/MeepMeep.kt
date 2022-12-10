@@ -76,7 +76,7 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
         entityList.forEach { it.render(g, canvas.width, canvas.height) }
 
         // Draw fps
-        g.font = Font("Sans", Font.BOLD, 20)
+        /*g.font = Font("Sans", Font.BOLD, 20)
         g.color = ColorManager.COLOR_PALETTE.GREEN_600
         g.drawString("%.1f FPS".format(loopManager.fps), 10, 20)
 
@@ -97,7 +97,7 @@ open class MeepMeep @JvmOverloads constructor(private val windowSize: Int, fps: 
                 mouseToFieldCoords.x,
                 mouseToFieldCoords.y,
             ), 10, canvas.height - 8
-        )
+        )*/
 
         g.dispose()
         canvas.bufferStrat.show()
