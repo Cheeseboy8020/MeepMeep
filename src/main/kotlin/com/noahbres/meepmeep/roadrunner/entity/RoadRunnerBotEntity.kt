@@ -29,7 +29,7 @@ class RoadRunnerBotEntity(
 
     private var driveTrainType: DriveTrainType = DriveTrainType.MECANUM,
 
-    var listenToSwitchThemeRequest: Boolean = false
+    var listenToSwitchThemeRequest: Boolean = false, val PATH_UNFOCUSED_OPACITY: Double = 0.3, val PATH_OUTER_OPACITY: Double = 0.4
 ) : BotEntity(meepMeep, width, height, pose, colorScheme, opacity), EntityEventListener {
     companion object {
         const val SKIP_LOOPS = 2
@@ -148,7 +148,8 @@ class RoadRunnerBotEntity(
     fun followTrajectorySequence(sequence: TrajectorySequence) {
         currentTrajectorySequence = sequence
 
-        trajectorySequenceEntity = TrajectorySequenceEntity(meepMeep, sequence, colorScheme)
+        trajectorySequenceEntity = TrajectorySequenceEntity(meepMeep, sequence, colorScheme, PATH_UNFOCUSED_OPACITY, PATH_OUTER_OPACITY)
+
     }
 
     fun setConstraints(constraints: Constraints) {

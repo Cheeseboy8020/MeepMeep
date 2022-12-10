@@ -6,7 +6,7 @@ import com.noahbres.meepmeep.core.colorscheme.ColorScheme
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity
 import com.noahbres.meepmeep.roadrunner.trajectorysequence.TrajectorySequence
 
-class DefaultBotBuilder(private val meepMeep: MeepMeep) {
+class DefaultBotBuilder(private val meepMeep: MeepMeep, private val opacity: Double = 0.8, private val PATH_UNFOCUSED_OPACITY: Double = 0.3, private val PATH_OUTER_OPACITY: Double = 0.4) {
 
     private var constraints = Constraints(
         30.0, 30.0, Math.toRadians(60.0), Math.toRadians(60.0), 15.0
@@ -17,7 +17,6 @@ class DefaultBotBuilder(private val meepMeep: MeepMeep) {
 
     private var startPose = Pose2d()
     private var colorScheme: ColorScheme? = null
-    private var opacity = 0.8
 
     private var driveTrainType = DriveTrainType.MECANUM
 
@@ -70,7 +69,7 @@ class DefaultBotBuilder(private val meepMeep: MeepMeep) {
             constraints,
             width, height,
             startPose, colorScheme ?: meepMeep.colorManager.theme, opacity,
-            driveTrainType, false
+            driveTrainType, false, PATH_UNFOCUSED_OPACITY, PATH_OUTER_OPACITY
         )
     }
 

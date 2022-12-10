@@ -18,15 +18,11 @@ import kotlin.math.roundToInt
 class TrajectorySequenceEntity(
     override val meepMeep: MeepMeep,
     private val trajectorySequence: TrajectorySequence,
-    private var colorScheme: ColorScheme
+    private var colorScheme: ColorScheme, val PATH_UNFOCUSED_OPACTIY: Double = 0.3, val PATH_OUTER_OPACITY: Double = 0.4
 ) : ThemedEntity {
     companion object {
         const val PATH_INNER_STROKE_WIDTH = 0.5
         const val PATH_OUTER_STROKE_WIDTH = 2.0
-
-        const val PATH_OUTER_OPACITY = 0.4
-
-        const val PATH_UNFOCUSED_OPACTIY = 0.3
 
         const val SAMPLE_RESOLUTION = 1.2
     }
